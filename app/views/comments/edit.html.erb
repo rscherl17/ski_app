@@ -33,7 +33,7 @@
           Run
         </label>
 
-        <input type="text" id="run_id" name="run_id" placeholder="Run" class="form-control" value="<%= @comment.run_id %>">
+        <%= select_tag(:run_id, options_from_collection_for_select(Run.all, :id, :created_at, @comment.run_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for comment -->
