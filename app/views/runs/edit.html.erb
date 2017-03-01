@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @run.errors.any? %>
+  <% @run.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Run #<%= @run.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_run/<%= @run.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for mountain_id -->
+      <div class="form-group">
+        <label for="mountain_id" class="control-label">
+          Mountain
+        </label>
+
+        <input type="text" id="mountain_id" name="mountain_id" placeholder="Mountain" class="form-control" value="<%= @run.mountain_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Run
+      </button>
+      or
+      <a href="/runs/<%= @run.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

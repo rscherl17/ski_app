@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Run resource:
+  # CREATE
+  get "/runs/new", :controller => "runs", :action => "new"
+  post "/create_run", :controller => "runs", :action => "create"
+
+  # READ
+  get "/runs", :controller => "runs", :action => "index"
+  get "/runs/:id", :controller => "runs", :action => "show"
+
+  # UPDATE
+  get "/runs/:id/edit", :controller => "runs", :action => "edit"
+  post "/update_run/:id", :controller => "runs", :action => "update"
+
+  # DELETE
+  get "/delete_run/:id", :controller => "runs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Mountain resource:
   # CREATE
   get "/mountains/new", :controller => "mountains", :action => "new"
