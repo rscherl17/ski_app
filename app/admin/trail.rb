@@ -1,4 +1,4 @@
-ActiveAdmin.register Run do
+ActiveAdmin.register Trail do
 
  permit_params :mountain_id
 

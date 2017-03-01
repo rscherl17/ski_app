@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
 
     @comment.user_id = params[:user_id]
-    @comment.run_id = params[:run_id]
+    @comment.trail_id = params[:trail_id]
     @comment.comment = params[:comment]
 
     save_status = @comment.save
@@ -59,7 +59,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.run_id = params[:run_id]
+    @comment.trail_id = params[:trail_id]
     @comment.comment = params[:comment]
 
     save_status = @comment.save

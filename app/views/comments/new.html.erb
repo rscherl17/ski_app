@@ -21,13 +21,13 @@
       <!-- Label and input for user_id -->
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
-      <!-- Label and input for run_id -->
+      <!-- Label and input for trail_id -->
       <div class="form-group">
-        <label for="run_id" class="control-label">
-          Run
+        <label for="trail_id" class="control-label">
+          Trail
         </label>
 
-        <%= select_tag(:run_id, options_from_collection_for_select(Run.all, :id, :created_at, @comment.run_id), :class => "form-control") %>
+        <%= select_tag(:trail_id, options_from_collection_for_select(Trail.all, :id, :created_at, @comment.trail_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for comment -->

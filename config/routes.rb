@@ -36,21 +36,21 @@ Rails.application.routes.draw do
   get "/delete_comment/:id", :controller => "comments", :action => "destroy"
   #------------------------------
 
-  # Routes for the Run resource:
+  # Routes for the Trail resource:
   # CREATE
-  get "/runs/new", :controller => "runs", :action => "new"
-  post "/create_run", :controller => "runs", :action => "create"
+  get "/trails/new", :controller => "trails", :action => "new"
+  post "/create_trail", :controller => "trails", :action => "create"
 
   # READ
-  get "/runs", :controller => "runs", :action => "index"
-  get "/runs/:id", :controller => "runs", :action => "show"
+  get "/trails", :controller => "trails", :action => "index"
+  get "/trails/:id", :controller => "trails", :action => "show"
 
   # UPDATE
-  get "/runs/:id/edit", :controller => "runs", :action => "edit"
-  post "/update_run/:id", :controller => "runs", :action => "update"
+  get "/trails/:id/edit", :controller => "trails", :action => "edit"
+  post "/update_trail/:id", :controller => "trails", :action => "update"
 
   # DELETE
-  get "/delete_run/:id", :controller => "runs", :action => "destroy"
+  get "/delete_trail/:id", :controller => "trails", :action => "destroy"
   #------------------------------
 
   # Routes for the Mountain resource:
