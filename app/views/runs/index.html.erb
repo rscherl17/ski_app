@@ -15,7 +15,7 @@
 
       <% @runs.each do |run| %>
       <tr>
-        <td><%= run.mountain_id %></td>
+        <td><%= run.mountain.location %></td>
         <td>
           <a href="/runs/<%= run.id %>" class="btn btn-primary">Show</a>
           <a href="/runs/<%= run.id %>/edit" class="btn btn-warning">Edit</a>
