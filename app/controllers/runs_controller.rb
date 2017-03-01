@@ -6,6 +6,7 @@ class RunsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @run = Run.find(params[:id])
 
     render("runs/show.html.erb")

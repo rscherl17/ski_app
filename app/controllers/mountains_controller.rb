@@ -6,6 +6,8 @@ class MountainsController < ApplicationController
   end
 
   def show
+    @photo = Photo.new
+    @run = Run.new
     @mountain = Mountain.find(params[:id])
 
     render("mountains/show.html.erb")

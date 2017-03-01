@@ -60,6 +60,20 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_run" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for mountain_id -->
+      <input type="hidden" name="mountain_id" value="<%= @mountain.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Run
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -91,6 +105,23 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_photo" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for mountain_id -->
+      <input type="hidden" name="mountain_id" value="<%= @mountain.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Photo
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
