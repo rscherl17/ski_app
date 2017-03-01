@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Mountain</dt>
-      <dd><%= @run.mountain_id %></dd>
+      <dd>
+        <% if @run.mountain.present? %>
+          <a href="/mountains/<%= @run.mountain_id %>">
+            <%= @run.mountain.location %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
