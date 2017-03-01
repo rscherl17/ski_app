@@ -1,6 +1,6 @@
 class RunsController < ApplicationController
   def index
-    @runs = Run.all
+    @runs = Run.page(params[:page]).per(10)
 
     render("runs/index.html.erb")
   end
