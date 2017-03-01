@@ -1,6 +1,7 @@
 class RunsController < ApplicationController
   def index
-    @runs = Run.page(params[:page]).per(10)
+    @q = Run.ransack(params[:q])
+    @runs = @q.result(:distinct => true).includes(:mountain, :comments).page(params[:page]).per(10)
 
     render("runs/index.html.erb")
   end
