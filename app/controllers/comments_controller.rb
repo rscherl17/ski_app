@@ -48,8 +48,6 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-
-    @comment.user_id = params[:user_id]
     @comment.run_id = params[:run_id]
     @comment.comment = params[:comment]
 
