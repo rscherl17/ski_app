@@ -5,6 +5,9 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
+      <dt>Mountain name</dt>
+      <dd><%= @mountain.mountain_name %></dd>
+
       <dt>Location</dt>
       <dd><%= @mountain.location %></dd>
 
@@ -14,8 +17,8 @@
       <dt>Skiable acres</dt>
       <dd><%= @mountain.skiable_acres %></dd>
 
-      <dt>Number of runs</dt>
-      <dd><%= @mountain.number_of_runs %></dd>
+      <dt>Number of trails</dt>
+      <dd><%= @mountain.number_of_trails %></dd>
 
     </dl>
 
@@ -42,19 +45,19 @@
         Runs
       </li>
 
-      <% @mountain.runs.each do |run| %>
+      <% @mountain.runs.each do |trail| %>
         <li class="list-group-item">
-          <a href="/runs/<%= run.id %>">
-            <%= run.created_at %>
+          <a href="/trails/<%= trail.id %>">
+            <%= trail.created_at %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
-            <a href="/runs/<%= run.id %>" class="btn btn-primary">
+            <a href="/trails/<%= trail.id %>" class="btn btn-primary">
               <i class="fa fa-search-plus"></i>
             </a>
-            <a href="/runs/<%= run.id %>/edit" class="btn btn-warning">
+            <a href="/trails/<%= trail.id %>/edit" class="btn btn-warning">
               <i class="fa fa-edit"></i>
             </a>
-            <a href="/delete_run/<%= run.id %>" class="btn btn-danger" rel="nofollow">
+            <a href="/delete_trail/<%= trail.id %>" class="btn btn-danger" rel="nofollow">
               <i class="fa fa-trash-o"></i>
             </a>
           </div>
@@ -62,7 +65,7 @@
       <% end %>
 
       <li class="list-group-item">
-        <form action="/create_run" method="post">
+        <form action="/create_trail" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -70,7 +73,7 @@
       <input type="hidden" name="mountain_id" value="<%= @mountain.id %>">
 
       <button class="btn btn-block btn-success">
-        Create Run
+        Create Trail
       </button>
     </form>
       </li>

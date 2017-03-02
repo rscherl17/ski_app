@@ -1,4 +1,4 @@
-class Run < ApplicationRecord
+class Trail < ApplicationRecord
   # Direct associations
 
   has_many   :comments,

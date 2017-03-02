@@ -14,10 +14,10 @@
         <% end %>
       </dd>
 
-      <dt>Run</dt>
+      <dt>Trail</dt>
       <dd>
         <% if @comment.run.present? %>
-          <a href="/runs/<%= @comment.run_id %>">
+          <a href="/trails/<%= @comment.trail_id %>">
             <%= @comment.run.created_at %>
           </a>
         <% end %>
