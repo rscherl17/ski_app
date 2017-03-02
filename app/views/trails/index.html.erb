@@ -1,11 +1,11 @@
 <div class="page-header">
   <h1>
-    Runs
-    <a href="/runs/new" class="btn btn-lg btn-success">New Run</a>
+    Trails
+    <a href="/trails/new" class="btn btn-lg btn-success">New Trail</a>
   </h1>
 </div><div class="row mb-1">
   <div class="col-md-12">
-    <%= search_form_for @q, :class => collapse_search_form, :id => "runs_filters" do |f| %>
+    <%= search_form_for @q, :class => collapse_search_form, :id => "trails_filters" do |f| %>
       <p class="lead">Narrow results:</p>
 
         <div class="form-group">
@@ -55,9 +55,9 @@
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-      <a href="/runs" class="btn btn-default btn-block mb-1">Clear filters</a>
+      <a href="/trails" class="btn btn-default btn-block mb-1">Clear filters</a>
     <% end %>
-    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#runs_filters">
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#trails_filters">
       Show Filters
     </a>
   </div>
@@ -71,23 +71,23 @@
         <th>Actions</th>
       </tr>
 
-      <% @runs.each do |run| %>
+      <% @trails.each do |trail| %>
       <tr>
         <td>
-          <% if run.mountain.present? %>
-            <a href="/mountains/<%= run.mountain.id %>">
-              <%= run.mountain.location %>
+          <% if trail.mountain.present? %>
+            <a href="/mountains/<%= trail.mountain.id %>">
+              <%= trail.mountain.location %>
             </a>
           <% end %>
         </td>
         <td>
-          <a href="/runs/<%= run.id %>" class="btn btn-primary">Show</a>
-          <a href="/runs/<%= run.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_run/<%= run.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/trails/<%= trail.id %>" class="btn btn-primary">Show</a>
+          <a href="/trails/<%= trail.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_trail/<%= trail.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
     </table>
-    <%= paginate @runs, theme: 'twitter-bootstrap-4' %>
+    <%= paginate @trails, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>

@@ -8,7 +8,7 @@ class MountainsController < ApplicationController
 
   def show
     @photo = Photo.new
-    @run = Run.new
+    @trail = Trail.new
     @mountain = Mountain.find(params[:id])
 
     render("mountains/show.html.erb")
@@ -23,10 +23,11 @@ class MountainsController < ApplicationController
   def create
     @mountain = Mountain.new
 
+    @mountain.mountain_name = params[:mountain_name]
     @mountain.location = params[:location]
     @mountain.vertical_feet = params[:vertical_feet]
     @mountain.skiable_acres = params[:skiable_acres]
-    @mountain.number_of_runs = params[:number_of_runs]
+    @mountain.number_of_trails = params[:number_of_trails]
 
     save_status = @mountain.save
 
@@ -53,10 +54,11 @@ class MountainsController < ApplicationController
   def update
     @mountain = Mountain.find(params[:id])
 
+    @mountain.mountain_name = params[:mountain_name]
     @mountain.location = params[:location]
     @mountain.vertical_feet = params[:vertical_feet]
     @mountain.skiable_acres = params[:skiable_acres]
-    @mountain.number_of_runs = params[:number_of_runs]
+    @mountain.number_of_trails = params[:number_of_trails]
 
     save_status = @mountain.save
 
