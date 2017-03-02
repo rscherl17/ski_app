@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Run #<%= @run.id %></h3>
+  <h3>Trail #<%= @trail.id %></h3>
 </div>
 
 <div class="row">
@@ -7,9 +7,9 @@
     <dl class="dl-horizontal">
       <dt>Mountain</dt>
       <dd>
-        <% if @run.mountain.present? %>
-          <a href="/mountains/<%= @run.mountain_id %>">
-            <%= @run.mountain.location %>
+        <% if @trail.mountain.present? %>
+          <a href="/mountains/<%= @trail.mountain_id %>">
+            <%= @trail.mountain.location %>
           </a>
         <% end %>
       </dd>
@@ -17,20 +17,20 @@
     </dl>
 
     <div class="btn-group btn-group-justified">
-      <a href="/runs" class="btn btn-primary">
+      <a href="/trails" class="btn btn-primary">
         Back
       </a>
-      <a href="/runs/<%= @run.id %>/edit" class="btn btn-warning">
+      <a href="/trails/<%= @trail.id %>/edit" class="btn btn-warning">
         Edit
       </a>
-      <a href="/delete_run/<%= @run.id %>" class="btn btn-danger" rel="nofollow">
+      <a href="/delete_trail/<%= @trail.id %>" class="btn btn-danger" rel="nofollow">
         Delete
       </a>
     </div>
   </div>
 </div>
 
-<!-- A Run has many comments -->
+<!-- A Trail has many comments -->
 
 <div class="row">
   <div class="col-md-12">
@@ -39,7 +39,7 @@
         Comments
       </li>
 
-      <% @run.comments.each do |comment| %>
+      <% @trail.comments.each do |comment| %>
         <li class="list-group-item">
           <a href="/comments/<%= comment.id %>">
             <%= comment.user_id %>
@@ -66,8 +66,8 @@
       <!-- Label and input for user_id -->
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
-      <!-- Label and input for run_id -->
-      <input type="hidden" name="run_id" value="<%= @run.id %>">
+      <!-- Label and input for trail_id -->
+      <input type="hidden" name="trail_id" value="<%= @trail.id %>">
 
       <!-- Label and input for comment -->
       <div class="form-group">

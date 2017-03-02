@@ -1,6 +1,6 @@
-class CreateRuns < ActiveRecord::Migration
+class CreateTrails < ActiveRecord::Migration
   def change
-    create_table :runs do |t|
+    create_table :trails do |t|
       t.integer :mountain_id
 
       t.timestamps

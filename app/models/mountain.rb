@@ -5,6 +5,7 @@ class Mountain < ApplicationRecord
              :dependent => :destroy
 
   has_many   :runs,
+             :class_name => "Trail",
              :dependent => :destroy
 
   # Indirect associations
